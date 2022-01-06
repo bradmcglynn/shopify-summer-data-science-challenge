@@ -4,7 +4,7 @@
 SELECT COUNT(OrderID), ShipperID FROM [Orders]
 
 WHERE ShipperID in (SELECT ShipperID FROM [Shippers]
-WHERE ShipperName = "Speedy Express"))
+WHERE ShipperName = 'Speedy Express')
 
 --There were 54 orders shipped by Speedy Express
 
