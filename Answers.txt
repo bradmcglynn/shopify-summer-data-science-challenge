@@ -24,7 +24,7 @@ How many orders were shipped by Speedy Express in total?
 SELECT COUNT(OrderID), ShipperID FROM [Orders]
 
 WHERE ShipperID in (SELECT ShipperID FROM [Shippers]
-WHERE ShipperID = 1)
+WHERE ShipperName = “Speedy Express”)
 
 There were 54 orders shipped by Speedy Express
 
@@ -44,7 +44,7 @@ EmployeeID 4, Last name Peacock
 
 What product was ordered the most by customers in Germany?
 
-SELECT Products.ProductID, Products.ProductName, MAX(OrderDetails.Quantity), OrderDetails.OrderID, Orders.CustomerID, Customers.Country
+SELECT Products.ProductID, Products.ProductName, MAX(OrderDetails.Quantity) as NumOrdered, OrderDetails.OrderID, Orders.CustomerID, Customers.Country
 
 FROM Products
 
